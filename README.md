@@ -2,6 +2,11 @@
 Example of using ClickHouse's URL dictionaries
 
 Simple Ruby HTTP server that reads and returns CSV
+- It should respond to POST request
+- It should also return input columns
+    - For example in our case we send `app_id` and `user_id` from ClickHouse
+    - HTTP server return `app_id`, `user_id` and `result` columns back
+
 
 ### How to test
 ```shell
