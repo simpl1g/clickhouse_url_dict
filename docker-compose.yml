@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  api:
+    build:
+      context: .
+    ports:
+      - "9292:9292"
+    env_file: .env
+    volumes:
+      - .:/opt/apps/api
+  clickhouse:
+    image: clickhouse/clickhouse-server:23.2.2-alpine
+    ports:
+      - "8120:8123"
+    env_file: .env
+    volumes:
+      - ./clickhouse/sql/:/docker-entrypoint-initdb.d
+      - ./clickhouse/config/:/etc/clickhouse-server/config.d/

@@ -1,0 +1,18 @@
+<clickhouse>
+    <named_collections>
+        <testdict>
+		    <url>http://api:9292</url>
+		    <format>CSVWithNames</format>
+		    <headers>
+                <header>
+                    <name>Content-Type</name>
+                    <value>application/csv</value>
+                </header>
+                <header>
+                    <name>API_KEY</name>
+                    <value from_env="API_KEY" />
+                </header>
+		    </headers>
+        </testdict>
+    </named_collections>
+</clickhouse>
